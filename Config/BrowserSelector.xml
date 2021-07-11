@@ -1,0 +1,23 @@
+﻿<BrowserSelector>
+  <Properties name="BrowserSettings">
+    <DefaultBrowser value="Firefox" />
+    <Array name="Rules">
+      <Element value="RuleId=0|MatchType=StartsWith|Url=http://www.atlassian.com|BrowserName=Chrome" />
+      <Element value="RuleId=1|MatchType=ExactMatch|Url=http://www.google.com|BrowserName=Chrome" />
+      <Element value="RuleId=2|MatchType=Contains|Url=http://www.microsoft.com|BrowserName=Edge" />
+      <Element value="RuleId=3|MatchType=ExactMatch|Url=http://www.onedrive.com|BrowserName=Internet Explorer" />
+      <Element value="RuleId=4|MatchType=Contains|Url=http://airtel.in|BrowserName=Firefox" />
+      <Element value="RuleId=5|MatchType=StartsWith|Url=https://www.bing.com|BrowserName=Edge" />
+      <Element value="RuleId=6|MatchType=StartsWith|Url=http://www.facebook.com/zshameel|BrowserName=Opera" />
+      <Element value="RuleId=7|MatchType=StartsWith|Url=http://www.paytm.com|BrowserName=Firefox" />
+      <Element value="RuleId=8|MatchType=ExactMatch|Url=http://www.braindare.com|BrowserName=Firefox" />
+      <Element value="RuleId=9|MatchType=Wildcard|Url=http://*.whatsapp.com|BrowserName=Opera" />
+      <Element value="RuleId=10|MatchType=StartsWith|Url=https://www.quora.com|BrowserName=Opera" />
+      <Element value="RuleId=11|MatchType=ExactMatch|Url=thedeveloperspace.com|BrowserName=Opera" />
+      <Element value="RuleId=12|MatchType=ExactMatch|Url=http://www.thearchitectzone.com|BrowserName=Opera" />
+      <Element value="RuleId=13|MatchType=StartsWith|Url=http://www.facebook.com|BrowserName=Opera" />
+      <Element value="RuleId=14|MatchType=Wildcard|Url=http://*.verizon.*|BrowserName=Firefox" />
+    </Array>
+    <UseDefaultBrowserForAllLinks value="False" />
+  </Properties>
+</BrowserSelector>
