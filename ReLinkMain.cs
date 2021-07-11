@@ -20,7 +20,12 @@ namespace ReLink
         [STAThread]
         static void Main(string[] args) {
             try {
-                Run(args);
+                var osVersion = NativeHelper.GetOSVersion();
+                if (osVersion == OSVersion.Win8 || osVersion == OSVersion.Win10) {
+                    Run(args);
+                } else {
+                    ToastForm.ShowToast($"{Application.ProductName} runs only Windows 8 and above.");
+                }
             } catch (Exception ex) {
                 HandleMainException(ex);
             }

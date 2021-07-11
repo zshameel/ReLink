@@ -31,18 +31,9 @@ namespace ReLink
             }
         }
 
-        private static OSVersion GetOSVersion() {
-            if ((Environment.OSVersion.Version.Major == 10)) {
-                return OSVersion.Win10;
-            } else if ((Environment.OSVersion.Version.Major == 6 && Environment.OSVersion.Version.Minor >= 2)) {
-                return OSVersion.Win8;
-            } else {
-                return OSVersion.Unknown;
-            }
-        }
 
         internal static BrowserRegistrar GetRegistrar() {
-            switch (GetOSVersion()) {
+            switch (NativeHelper.GetOSVersion()) {
                 //case OSVersion.Win7:
                 //    return new BrowserRegistrarWin7();
                 case OSVersion.Win8:

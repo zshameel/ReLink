@@ -79,6 +79,7 @@
     <Compile Include="Browser\BrowserRegistrar.cs" />
     <Compile Include="Browser\BrowserRegistrarWin10.cs" />
     <Compile Include="Browser\BrowserType.cs" />
+    <Compile Include="Browser\NativeHelper.cs" />
     <Compile Include="Browser\OSVersion.cs" />
     <Compile Include="ReLinkMain.cs" />
     <Compile Include="Rules\MatchType.cs" />
