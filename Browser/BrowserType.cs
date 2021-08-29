@@ -13,6 +13,7 @@ namespace ReLink
         Opera,
         Safari,
         Brave,
-        Unknown = 100
+        Sidekick,
+        Unknown = 999
     }
 }

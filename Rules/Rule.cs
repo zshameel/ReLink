@@ -9,8 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ReLink
-{
+namespace ReLink {
 
     class Rule : IEquatable<Rule>, IComparable<Rule> {
 
@@ -20,7 +19,7 @@ namespace ReLink
         internal string BrowserName { get; set; }
 
         internal bool IsMatch(string matchUrl) {
-            switch(MatchType) {
+            switch (MatchType) {
                 case MatchType.Contains:
                     return (matchUrl.Contains(Url));
                 case MatchType.StartsWith:
@@ -47,7 +46,7 @@ namespace ReLink
 
             Rule rule = new Rule();
             string[] parts = ruleString.Split('|');
-            foreach(string part in parts) {
+            foreach (string part in parts) {
                 int index = part.IndexOf('=');
                 if (index <= 0) {
                     continue;

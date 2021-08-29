@@ -88,37 +88,17 @@ namespace ReLink
                 }
             }
 
-            if (string.IsNullOrWhiteSpace(appId) || appId.Contains("IE.HTTP")) {
-                browser.BrowserType = BrowserType.InternetExplorer;
-                browser.Name = "Internet Explorer";
-            } else if (appId.Contains("AppXq0fevzme2pys62n3e0fbqa7peapykr8v")) {
-                browser.BrowserType = BrowserType.EdgeLegacy;
-                browser.Name = "Edge (Legacy)";
-            } else if (appId.Contains("MSEdgeHTM")) {
-                browser.BrowserType = BrowserType.Edge;
-                browser.Name = "Edge";
-            } else if (appId.Contains("Firefox")) {
-                browser.BrowserType = BrowserType.Firefox;
-                browser.Name = "Firefox";
-            } else if (appId.Contains("Chrome")) {
-                browser.BrowserType = BrowserType.Chrome;
-                browser.Name = "Chrome";
-            } else if (appId.Contains("Opera")) {
-                browser.BrowserType = BrowserType.Opera;
-                browser.Name = "Opera";
-            } else if (appId.Contains("Safari")) {
-                browser.BrowserType = BrowserType.Safari;
-                browser.Name = "Safari";
-            } else if (appId.Contains("Brave")) {
-                browser.BrowserType = BrowserType.Brave;
-                browser.Name = "Brave";
-            } else {
-                browser.BrowserType = BrowserType.Unknown;
-                browser.Name = appId;
-            }
+            BrowserType browserType;
+            string browserName;
+            
+            BrowserManager.GetBrowserInfoFromAppId(appId, out browserType, out browserName);
+
+            browser.BrowserType = browserType;
+            browser.Name = browserName;
 
             return browser;
         }
+
     }
 
 }

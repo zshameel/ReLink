@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ReLink
@@ -274,8 +275,17 @@ namespace ReLink
                             row.Cells[0].Value = rule.RuleId;
                             row.Cells[1].Value = rule.MatchType;
                             row.Cells[2].Value = rule.Url;
-                            row.Cells[3].Value = imlBrowsers.Images[rule.BrowserName];
-                            row.Cells[4].Value = rule.BrowserName;
+
+                            //If old rules have raw names that were not supported, change them to proper names
+                            string browserName = rule.BrowserName;
+                            if (BrowserManager.Browsers.Count(n => n.Name.Equals(browserName, StringComparison.OrdinalIgnoreCase)) == 0) {
+                                BrowserType browserType;
+                                string browserNewName;
+                                BrowserManager.GetBrowserInfoFromAppId(browserName, out browserType, out browserNewName);
+                                browserName = browserNewName;
+                            }
+                            row.Cells[4].Value = browserName;
+                            row.Cells[3].Value = imlBrowsers.Images[browserName];
                         }
                     }
                 }

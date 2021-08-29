@@ -140,6 +140,40 @@ namespace ReLink {
 #endif
         }
 
+        internal static void GetBrowserInfoFromAppId(string appId, out BrowserType browserType, out string browserName) {
+            if (string.IsNullOrWhiteSpace(appId) || appId.Contains("IE.HTTP")) {
+                browserType = BrowserType.InternetExplorer;
+                browserName = "Internet Explorer";
+            } else if (appId.Contains("AppXq0fevzme2pys62n3e0fbqa7peapykr8v")) {
+                browserType = BrowserType.EdgeLegacy;
+                browserName = "Edge (Legacy)";
+            } else if (appId.Contains("MSEdgeHTM")) {
+                browserType = BrowserType.Edge;
+                browserName = "Edge";
+            } else if (appId.Contains("Firefox")) {
+                browserType = BrowserType.Firefox;
+                browserName = "Firefox";
+            } else if (appId.Contains("Chrome")) {
+                browserType = BrowserType.Chrome;
+                browserName = "Chrome";
+            } else if (appId.Contains("Opera")) {
+                browserType = BrowserType.Opera;
+                browserName = "Opera";
+            } else if (appId.Contains("Safari")) {
+                browserType = BrowserType.Safari;
+                browserName = "Safari";
+            } else if (appId.Contains("Brave")) {
+                browserType = BrowserType.Brave;
+                browserName = "Brave";
+            } else if (appId.Contains("ChromiumHTM.CDR3CLVQ567AB7Y3475B63PFYE")) {
+                browserType = BrowserType.Sidekick;
+                browserName = "Sidekick";
+            } else {
+                browserType = BrowserType.Unknown;
+                browserName = appId;
+            }
+        }
+
         private static BrowserRegistrar Registrar {
             get {
                 return BrowserRegistrar.GetRegistrar();
