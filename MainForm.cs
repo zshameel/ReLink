@@ -6,6 +6,7 @@ using ImageComboBox;
 using ReLink.Core;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -33,7 +34,12 @@ namespace ReLink
             InitBrowserList(cboBrowser);
             InitBrowserList(cboDefaultBrowser);
             InitMatchTypesList();
-            InitSettings();
+            
+            LoadSavedRules();
+
+            if (grdRules.Rows.Count == 0) {
+                InitSampleRules();
+            }
         }
 
         private void MainForm_Shown(object sender, EventArgs e) {
@@ -41,7 +47,7 @@ namespace ReLink
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
-            e.Cancel = !SaveSettings();
+            e.Cancel = !SaveRules();
         }
 
         private void btnRegister_Click(object sender, EventArgs e) {
@@ -203,9 +209,9 @@ namespace ReLink
         }
 
         private void tsbSave_Click(object sender, EventArgs e) {
-            SaveSettings();
+            SaveRules();
             PropertyService.Save();
-            MessageBox.Show("Rules have been successfully saved.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ToastForm.ShowToast("Rules have been successfully saved.");
         }
 
         private void chkUseDefault_CheckedChanged(object sender, EventArgs e) {
@@ -254,7 +260,7 @@ namespace ReLink
             }
         }
 
-        private void InitSettings() {
+        private void LoadSavedRules() {
             try {
                 cboDefaultBrowser.Text = BrowserSettings.DefaultBrowserName;
 
@@ -279,7 +285,7 @@ namespace ReLink
             }
         }
 
-        private bool SaveSettings() {
+        private bool SaveRules() {
             try {
                 BrowserSettings.DefaultBrowserName = cboDefaultBrowser.Text;
                 BrowserSettings.UseDefaultBrowserForAllLinks = chkUseDefault.Checked;
@@ -299,6 +305,29 @@ namespace ReLink
                 return true;
             } catch {
                 return false;
+            }
+        }
+
+        private void InitSampleRules () {
+            try {
+                List<Rule> rules = new List<Rule>() { 
+                    new Rule() { RuleId = 0, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://google.com" },
+                    new Rule() { RuleId = 1, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://mail.google.com/mail" },
+                    new Rule() { RuleId = 2, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://outlook.live.com" },
+                    new Rule() { RuleId = 3, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://microsoft.com" },
+                    new Rule() { RuleId = 4, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://github.com" },
+                    new Rule() { RuleId = 4, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://stackoverflow.com" }
+                };
+
+                foreach (Rule rule in rules) {
+                    DataGridViewRow row = grdRules.Rows[grdRules.Rows.Add()];
+                    row.Cells[0].Value = rule.RuleId;
+                    row.Cells[1].Value = rule.MatchType;
+                    row.Cells[2].Value = rule.Url;
+                    row.Cells[3].Value = imlBrowsers.Images[rule.BrowserName];
+                    row.Cells[4].Value = rule.BrowserName;
+                }
+            } catch {
             }
         }
 
