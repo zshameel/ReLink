@@ -1,3 +1,11 @@
 # ReLink
-Re:Link - The Browser Bootstrapper
-Re:Link registers itself as a Browser in Windows 10 and forwards links to different browsers intalled on the machine based on a predefined list of rules. For more information, visit http://getrelink.com
+Re:Link - The Browser Interceptior
+
+Re:Link is a browser that is not a browser. You can set it as your default browser and it will open links in different browsers based on predefined rules.
+
+For example, it can open google.com in Chrome, msn.com in Edge, github.com in Firefox and youtube.com in Brave.
+
+You can also fine tune rules to make same domain open in different browsers. For example, mail.google.com can open in Brave while google.com still opens in Chrome.
+
+
+To know more, visit https://getrelink.com
