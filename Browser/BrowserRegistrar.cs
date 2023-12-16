@@ -34,8 +34,6 @@ namespace ReLink
 
         internal static BrowserRegistrar GetRegistrar() {
             switch (NativeHelper.GetOSVersion()) {
-                //case OSVersion.Win7:
-                //    return new BrowserRegistrarWin7();
                 case OSVersion.Win8:
                     return new BrowserRegistrarWin10();
                 case OSVersion.Win10:

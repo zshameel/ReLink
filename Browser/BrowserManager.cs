@@ -25,7 +25,9 @@ namespace ReLink {
             browsers = BrowserManager.GetRegisteredBrowsers();
 
             //Edge quirk
-            GetBrowserByType(BrowserType.EdgeLegacy)!.ExePath = "microsoft-edge:";
+            try {
+                GetBrowserByType(BrowserType.EdgeLegacy).ExePath = "microsoft-edge:";
+            } catch { }
         }
 
         private static void InitRules() {

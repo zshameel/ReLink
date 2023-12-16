@@ -326,7 +326,7 @@ namespace ReLink
                     new Rule() { RuleId = 2, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://outlook.live.com" },
                     new Rule() { RuleId = 3, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://microsoft.com" },
                     new Rule() { RuleId = 4, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://github.com" },
-                    new Rule() { RuleId = 4, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://stackoverflow.com" }
+                    new Rule() { RuleId = 5, BrowserName = cboDefaultBrowser.Text, MatchType = MatchType.Contains, Url = "https://stackoverflow.com" }
                 };
 
                 foreach (Rule rule in rules) {
@@ -353,7 +353,17 @@ namespace ReLink
             }
 
             if (dropdownBox.Items.Count > 0) {
-                dropdownBox.SelectedIndex = 0;
+                int indexOfEdge = dropdownBox.FindStringExact("Edge");
+                if (indexOfEdge > 0) {
+                    dropdownBox.SelectedIndex = indexOfEdge;
+                } else {
+                    int indexOfEdgeLegacy = dropdownBox.FindStringExact("Edge (Legacy)");
+                    if (indexOfEdgeLegacy > 0) {
+                        dropdownBox.SelectedIndex = indexOfEdgeLegacy;
+                    } else {
+                        dropdownBox.SelectedIndex = 0;
+                    }
+                } 
             }
         }
 

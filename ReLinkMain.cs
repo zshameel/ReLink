@@ -24,7 +24,7 @@ namespace ReLink
                 if (osVersion == OSVersion.Win8 || osVersion == OSVersion.Win10) {
                     Run(args);
                 } else {
-                    ToastForm.ShowToast($"{Application.ProductName} runs only Windows 8 and above.");
+                    ToastForm.ShowToast($"{Application.ProductName} runs on Windows 8 and later. Your operating system is not supported.");
                 }
             } catch (Exception ex) {
                 HandleMainException(ex);
@@ -57,7 +57,11 @@ namespace ReLink
                     BrowserManager.UnregisterRelinkAsBrowser();
                 } else {
                     BrowserInfo browser = BrowserManager.LaunchUrl(arg);
-                    ToastForm.ShowToast($"Re:Link opened {arg} in {browser.Name}", true);
+                    string urlToLaunch = arg;
+                    if (urlToLaunch.Length > 80) {
+                        urlToLaunch = urlToLaunch.Substring(0, 80) + "...";
+                    }
+                    ToastForm.ShowToast($"Re:Link opened {urlToLaunch} in {browser.Name}", true);
                 }
             }
         }
