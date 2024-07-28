@@ -7,4 +7,4 @@ For example, it can open google.com in Chrome, msn.com in Edge, github.com in Fi
 
 You can also fine tune rules to make same domain open in different browsers. For example, mail.google.com can open in Brave while google.com still opens in Chrome.
 
-To know more, visit https://getrelink.com
+To know more, visit https://relink.shameel.net
