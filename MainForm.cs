@@ -204,7 +204,7 @@ namespace ReLink
             new Process() {
                 StartInfo =
                 new ProcessStartInfo() {
-                    FileName = "http://getrelink.com"
+                    FileName = "https://relink.shameel.net/"
                 }
             }.Start();
         }

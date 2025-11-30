@@ -8,8 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 
-namespace ReLink
-{
+namespace ReLink {
     abstract class BrowserRegistrar {
 
         protected const string AppId = "ReLink";
@@ -88,7 +87,7 @@ namespace ReLink
 
             BrowserType browserType;
             string browserName;
-            
+
             BrowserManager.GetBrowserInfoFromAppId(appId, out browserType, out browserName);
 
             browser.BrowserType = browserType;
