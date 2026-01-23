@@ -8,8 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 
-namespace ReLink
-{
+namespace ReLink {
     abstract class BrowserRegistrar {
 
         protected const string AppId = "ReLink";
@@ -34,8 +33,6 @@ namespace ReLink
 
         internal static BrowserRegistrar GetRegistrar() {
             switch (NativeHelper.GetOSVersion()) {
-                //case OSVersion.Win7:
-                //    return new BrowserRegistrarWin7();
                 case OSVersion.Win8:
                     return new BrowserRegistrarWin10();
                 case OSVersion.Win10:
@@ -90,7 +87,7 @@ namespace ReLink
 
             BrowserType browserType;
             string browserName;
-            
+
             BrowserManager.GetBrowserInfoFromAppId(appId, out browserType, out browserName);
 
             browser.BrowserType = browserType;

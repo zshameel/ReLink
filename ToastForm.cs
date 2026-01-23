@@ -24,7 +24,9 @@ namespace ReLink {
 
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            toast.Location = new Point((screenWidth - toast.Size.Width) / 2, (screenHeight - toast.Size.Height) - 10);
+            toast.Size = new Size(screenWidth / 5, screenHeight/5);
+                        
+            toast.Location = new Point((screenWidth - toast.Size.Width) - 10, (screenHeight - toast.Size.Height) - 10);
 
             if (isDialog) {
                 toast.ShowDialog();
@@ -34,12 +36,12 @@ namespace ReLink {
         }
 
         private void TmrBlinkTick(object sender, EventArgs e) {
-            blinkCount++;
+           /* blinkCount++;
 
             if (blinkCount <= 4) {
                 Opacity = Opacity == 1 ? 0 : 1; 
                 Refresh();
-            }
+            }*/
         }
 
         private void TmrCloseTick(object sender, EventArgs e) {
