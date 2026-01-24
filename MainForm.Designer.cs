@@ -43,6 +43,7 @@
             this.lblDefaultDesc = new System.Windows.Forms.Label();
             this.chkUseDefault = new System.Windows.Forms.CheckBox();
             this.grpDefaultsSection = new System.Windows.Forms.GroupBox();
+            this.chkShowNotifications = new System.Windows.Forms.CheckBox();
             this.cboDefaultBrowser = new ImageComboBox.ImageComboBox();
             this.imlBrowsers = new System.Windows.Forms.ImageList(this.components);
             this.grpRulesSection = new System.Windows.Forms.GroupBox();
@@ -53,8 +54,8 @@
             this.btnRemoveUrl = new System.Windows.Forms.Button();
             this.btnAddUrl = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbRegister = new System.Windows.Forms.ToolStripButton();
             this.tsbUnregister = new System.Windows.Forms.ToolStripButton();
+            this.tsbRegister = new System.Windows.Forms.ToolStripButton();
             this.tsbSetDefault = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
@@ -89,10 +90,15 @@
             // 
             this.imlButtons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlButtons.ImageStream")));
             this.imlButtons.TransparentColor = System.Drawing.Color.Transparent;
-            this.imlButtons.Images.SetKeyName(0, "delete_16x.ico");
-            this.imlButtons.Images.SetKeyName(1, "112_UpArrowShort_Green.ico");
-            this.imlButtons.Images.SetKeyName(2, "112_DownArrowShort_Orange.ico");
-            this.imlButtons.Images.SetKeyName(3, "112_Plus_Green.ico");
+            this.imlButtons.Images.SetKeyName(0, "Register.png");
+            this.imlButtons.Images.SetKeyName(1, "Unregister.png");
+            this.imlButtons.Images.SetKeyName(2, "SetAsDefault.png");
+            this.imlButtons.Images.SetKeyName(3, "Save.png");
+            this.imlButtons.Images.SetKeyName(4, "About.png");
+            this.imlButtons.Images.SetKeyName(5, "Add.png");
+            this.imlButtons.Images.SetKeyName(6, "Remove.png");
+            this.imlButtons.Images.SetKeyName(7, "MoveDown.png");
+            this.imlButtons.Images.SetKeyName(8, "MoveUp.png");
             // 
             // grdRules
             // 
@@ -116,7 +122,7 @@
             this.grdRules.RowTemplate.Height = 24;
             this.grdRules.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdRules.Size = new System.Drawing.Size(763, 360);
-            this.grdRules.TabIndex = 6;
+            this.grdRules.TabIndex = 4;
             this.grdRules.SelectionChanged += new System.EventHandler(this.grdRules_SelectionChanged);
             // 
             // colSerial
@@ -175,8 +181,8 @@
             this.lblDefaultDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDefaultDesc.Location = new System.Drawing.Point(287, 25);
             this.lblDefaultDesc.Name = "lblDefaultDesc";
-            this.lblDefaultDesc.Size = new System.Drawing.Size(275, 15);
-            this.lblDefaultDesc.TabIndex = 3;
+            this.lblDefaultDesc.Size = new System.Drawing.Size(276, 15);
+            this.lblDefaultDesc.TabIndex = 2;
             this.lblDefaultDesc.Text = "(This browser will be used if no rules match the url)";
             // 
             // chkUseDefault
@@ -186,13 +192,14 @@
             this.chkUseDefault.Location = new System.Drawing.Point(14, 52);
             this.chkUseDefault.Name = "chkUseDefault";
             this.chkUseDefault.Size = new System.Drawing.Size(238, 19);
-            this.chkUseDefault.TabIndex = 2;
+            this.chkUseDefault.TabIndex = 3;
             this.chkUseDefault.Text = "Use this browser for all Urls (ignore rules)";
             this.chkUseDefault.UseVisualStyleBackColor = true;
             this.chkUseDefault.CheckedChanged += new System.EventHandler(this.chkUseDefault_CheckedChanged);
             // 
             // grpDefaultsSection
             // 
+            this.grpDefaultsSection.Controls.Add(this.chkShowNotifications);
             this.grpDefaultsSection.Controls.Add(this.cboDefaultBrowser);
             this.grpDefaultsSection.Controls.Add(this.chkUseDefault);
             this.grpDefaultsSection.Controls.Add(this.lblFallback);
@@ -200,10 +207,21 @@
             this.grpDefaultsSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpDefaultsSection.Location = new System.Drawing.Point(14, 502);
             this.grpDefaultsSection.Name = "grpDefaultsSection";
-            this.grpDefaultsSection.Size = new System.Drawing.Size(826, 85);
-            this.grpDefaultsSection.TabIndex = 1;
+            this.grpDefaultsSection.Size = new System.Drawing.Size(826, 105);
+            this.grpDefaultsSection.TabIndex = 2;
             this.grpDefaultsSection.TabStop = false;
-            this.grpDefaultsSection.Text = "Default Settings";
+            this.grpDefaultsSection.Text = "Settings";
+            // 
+            // chkShowNotifications
+            // 
+            this.chkShowNotifications.AutoSize = true;
+            this.chkShowNotifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkShowNotifications.Location = new System.Drawing.Point(14, 80);
+            this.chkShowNotifications.Name = "chkShowNotifications";
+            this.chkShowNotifications.Size = new System.Drawing.Size(234, 19);
+            this.chkShowNotifications.TabIndex = 4;
+            this.chkShowNotifications.Text = "Show notifications when a Url is opened";
+            this.chkShowNotifications.UseVisualStyleBackColor = true;
             // 
             // cboDefaultBrowser
             // 
@@ -238,7 +256,7 @@
             this.grpRulesSection.Location = new System.Drawing.Point(14, 61);
             this.grpRulesSection.Name = "grpRulesSection";
             this.grpRulesSection.Size = new System.Drawing.Size(826, 434);
-            this.grpRulesSection.TabIndex = 0;
+            this.grpRulesSection.TabIndex = 1;
             this.grpRulesSection.TabStop = false;
             this.grpRulesSection.Text = "Rules";
             // 
@@ -252,7 +270,7 @@
             this.cboMatchType.Location = new System.Drawing.Point(51, 21);
             this.cboMatchType.Name = "cboMatchType";
             this.cboMatchType.Size = new System.Drawing.Size(111, 22);
-            this.cboMatchType.TabIndex = 10;
+            this.cboMatchType.TabIndex = 1;
             // 
             // cboBrowser
             // 
@@ -270,48 +288,48 @@
             // 
             this.btnMoveDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoveDown.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMoveDown.ImageKey = "112_DownArrowShort_Orange.ico";
+            this.btnMoveDown.ImageKey = "MoveDown.png";
             this.btnMoveDown.ImageList = this.imlButtons;
             this.btnMoveDown.Location = new System.Drawing.Point(784, 177);
             this.btnMoveDown.Name = "btnMoveDown";
             this.btnMoveDown.Size = new System.Drawing.Size(33, 32);
-            this.btnMoveDown.TabIndex = 9;
+            this.btnMoveDown.TabIndex = 8;
             this.btnMoveDown.UseVisualStyleBackColor = true;
             this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
             // btnMoveUp
             // 
             this.btnMoveUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMoveUp.ImageKey = "112_UpArrowShort_Green.ico";
+            this.btnMoveUp.ImageKey = "MoveUp.png";
             this.btnMoveUp.ImageList = this.imlButtons;
             this.btnMoveUp.Location = new System.Drawing.Point(784, 143);
             this.btnMoveUp.Name = "btnMoveUp";
             this.btnMoveUp.Size = new System.Drawing.Size(33, 32);
-            this.btnMoveUp.TabIndex = 8;
+            this.btnMoveUp.TabIndex = 7;
             this.btnMoveUp.UseVisualStyleBackColor = true;
             this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
             // 
             // btnRemoveUrl
             // 
             this.btnRemoveUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveUrl.ImageKey = "delete_16x.ico";
+            this.btnRemoveUrl.ImageKey = "Remove.png";
             this.btnRemoveUrl.ImageList = this.imlButtons;
             this.btnRemoveUrl.Location = new System.Drawing.Point(784, 93);
             this.btnRemoveUrl.Name = "btnRemoveUrl";
             this.btnRemoveUrl.Size = new System.Drawing.Size(33, 32);
-            this.btnRemoveUrl.TabIndex = 7;
+            this.btnRemoveUrl.TabIndex = 6;
             this.btnRemoveUrl.UseVisualStyleBackColor = true;
             this.btnRemoveUrl.Click += new System.EventHandler(this.btnRemoveUrl_Click);
             // 
             // btnAddUrl
             // 
             this.btnAddUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUrl.ImageKey = "112_Plus_Green.ico";
+            this.btnAddUrl.ImageKey = "Add.png";
             this.btnAddUrl.ImageList = this.imlButtons;
             this.btnAddUrl.Location = new System.Drawing.Point(784, 54);
             this.btnAddUrl.Name = "btnAddUrl";
             this.btnAddUrl.Size = new System.Drawing.Size(33, 32);
-            this.btnAddUrl.TabIndex = 4;
+            this.btnAddUrl.TabIndex = 5;
             this.btnAddUrl.UseVisualStyleBackColor = true;
             this.btnAddUrl.Click += new System.EventHandler(this.btnAddUrl_Click);
             // 
@@ -320,8 +338,8 @@
             this.toolStrip1.BackColor = System.Drawing.SystemColors.Window;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbRegister,
             this.tsbUnregister,
+            this.tsbRegister,
             this.tsbSetDefault,
             this.toolStripSeparator1,
             this.tsbSave,
@@ -330,32 +348,32 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(852, 39);
-            this.toolStrip1.TabIndex = 2;
-            // 
-            // tsbRegister
-            // 
-            this.tsbRegister.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbRegister.Image = global::ReLink.Properties.Resources.register;
-            this.tsbRegister.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbRegister.Name = "tsbRegister";
-            this.tsbRegister.Size = new System.Drawing.Size(36, 36);
-            this.tsbRegister.Text = "Register Re:Link as a browser";
-            this.tsbRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.toolStrip1.TabIndex = 0;
             // 
             // tsbUnregister
             // 
             this.tsbUnregister.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUnregister.Image = global::ReLink.Properties.Resources.unregister;
+            this.tsbUnregister.Image = ((System.Drawing.Image)(resources.GetObject("tsbUnregister.Image")));
             this.tsbUnregister.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUnregister.Name = "tsbUnregister";
             this.tsbUnregister.Size = new System.Drawing.Size(36, 36);
             this.tsbUnregister.Text = "Unregister Re:Link";
             this.tsbUnregister.Click += new System.EventHandler(this.btnUnregister_Click);
             // 
+            // tsbRegister
+            // 
+            this.tsbRegister.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbRegister.Image = ((System.Drawing.Image)(resources.GetObject("tsbRegister.Image")));
+            this.tsbRegister.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRegister.Name = "tsbRegister";
+            this.tsbRegister.Size = new System.Drawing.Size(36, 36);
+            this.tsbRegister.Text = "Register Re:Link as a browser";
+            this.tsbRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // tsbSetDefault
             // 
             this.tsbSetDefault.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSetDefault.Image = global::ReLink.Properties.Resources.setdefault;
+            this.tsbSetDefault.Image = ((System.Drawing.Image)(resources.GetObject("tsbSetDefault.Image")));
             this.tsbSetDefault.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSetDefault.Name = "tsbSetDefault";
             this.tsbSetDefault.Size = new System.Drawing.Size(36, 36);
@@ -370,7 +388,7 @@
             // tsbSave
             // 
             this.tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSave.Image = global::ReLink.Properties.Resources.Save2;
+            this.tsbSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbSave.Image")));
             this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSave.Name = "tsbSave";
             this.tsbSave.Size = new System.Drawing.Size(36, 36);
@@ -385,7 +403,7 @@
             // tsbAbout
             // 
             this.tsbAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAbout.Image = global::ReLink.Properties.Resources.About;
+            this.tsbAbout.Image = ((System.Drawing.Image)(resources.GetObject("tsbAbout.Image")));
             this.tsbAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAbout.Name = "tsbAbout";
             this.tsbAbout.Size = new System.Drawing.Size(36, 36);
@@ -396,7 +414,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(852, 601);
+            this.ClientSize = new System.Drawing.Size(852, 637);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.grpRulesSection);
             this.Controls.Add(this.grpDefaultsSection);
@@ -453,6 +471,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUrl;
         private System.Windows.Forms.DataGridViewImageColumn colBrowserImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrowser;
+        private System.Windows.Forms.CheckBox chkShowNotifications;
     }
 }
 

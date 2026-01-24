@@ -81,6 +81,11 @@
     <Compile Include="Browser\BrowserType.cs" />
     <Compile Include="Browser\NativeHelper.cs" />
     <Compile Include="Browser\OSVersion.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReLinkMain.cs" />
     <Compile Include="Rules\MatchType.cs" />
     <Compile Include="Rules\Wildcard.cs" />
@@ -125,14 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,15 +156,11 @@
     <Content Include="ImageComboBox\ImageComboBox.csproj" />
     <Content Include="ImageComboBox\ImageComboBox.csproj.user" />
     <Content Include="ImageComboBox\None.bmp" />
-    <None Include="Images\relink-logo-green.png" />
-    <None Include="Images\relink-logo-green.ico" />
     <None Include="Images\register.png" />
     <None Include="Images\unregister.png" />
-    <None Include="Images\setdefault.jpg" />
     <None Include="Images\About.png" />
-    <None Include="Images\Save.ico" />
     <None Include="Images\Save.png" />
-    <None Include="Images\Save2.png" />
+    <Content Include="Images\ReLink.ico" />
     <Content Include="relink-logo.ico" />
   </ItemGroup>
   <ItemGroup>

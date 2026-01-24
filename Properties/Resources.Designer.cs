@@ -63,9 +63,9 @@ namespace ReLink.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _112_DownArrowShort_Orange {
+        internal static System.Drawing.Bitmap Register {
             get {
-                object obj = ResourceManager.GetObject("112_DownArrowShort_Orange", resourceCulture);
+                object obj = ResourceManager.GetObject("Register", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,99 +73,9 @@ namespace ReLink.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About {
+        internal static System.Drawing.Bitmap Unregister {
             get {
-                object obj = ResourceManager.GetObject("About", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delete_16x {
-            get {
-                object obj = ResourceManager.GetObject("delete_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap register {
-            get {
-                object obj = ResourceManager.GetObject("register", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap relink_logo {
-            get {
-                object obj = ResourceManager.GetObject("relink_logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon relink_logo_ico {
-            get {
-                object obj = ResourceManager.GetObject("relink_logo_ico", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Save {
-            get {
-                object obj = ResourceManager.GetObject("Save", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Save1 {
-            get {
-                object obj = ResourceManager.GetObject("Save1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Save2 {
-            get {
-                object obj = ResourceManager.GetObject("Save2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap setdefault {
-            get {
-                object obj = ResourceManager.GetObject("setdefault", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap unregister {
-            get {
-                object obj = ResourceManager.GetObject("unregister", resourceCulture);
+                object obj = ResourceManager.GetObject("Unregister", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

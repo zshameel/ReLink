@@ -27,6 +27,13 @@ namespace ReLink.Core {
             set { properties.Set<bool>("UseDefaultBrowserForAllLinks", value); }
         }
 
+        public static bool ShowNotifications {
+            get {
+                return properties.Get<bool>("ShowNotifications", true);
+            }
+            set { properties.Set<bool>("ShowNotifications", value); }
+        }
+
         public static ArrayList Rules {
             get {
                 return properties.Get<ArrayList>("Rules", null);

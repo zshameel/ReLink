@@ -291,6 +291,7 @@ namespace ReLink
                 }
 
                 chkUseDefault.Checked = BrowserSettings.UseDefaultBrowserForAllLinks;
+                chkShowNotifications.Checked = BrowserSettings.ShowNotifications;
             } catch {
             }
         }
@@ -299,6 +300,7 @@ namespace ReLink
             try {
                 BrowserSettings.DefaultBrowserName = cboDefaultBrowser.Text;
                 BrowserSettings.UseDefaultBrowserForAllLinks = chkUseDefault.Checked;
+                BrowserSettings.ShowNotifications = chkShowNotifications.Checked;
 
                 ArrayList rules = new ArrayList();
                 foreach (DataGridViewRow row in grdRules.Rows) {

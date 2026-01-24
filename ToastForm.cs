@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReLink.Core;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -16,6 +17,10 @@ namespace ReLink {
         }
 
         internal static void ShowToast(string message, bool isDialog) {
+            if (isDialog && !BrowserSettings.ShowNotifications) {
+                return;
+            }
+
             ToastForm toast = new ToastForm();
             toast.lblMessage.Text = message;
             toast.tmrClose.Interval = DURATION * 1000;
