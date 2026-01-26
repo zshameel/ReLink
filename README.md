@@ -1,10 +1,16 @@
 # ReLink
-Re:Link - The Browser Interceptor
+Re:Link is a a smart desktop app that acts as a rule-based link handler. Once set as your default browser, it intercepts link clicks from email clients and other desktop apps and opens them in specific browsers based on your custom rules.
 
-Re:Link is a desktop app that acts like a browser. When you set it as the default browser, it intercepts link requests from Email clients, desktop apps and other programs and open them in different browsers based on predefined rules.
+For example:
+- google.com → Chrome
+- msn.com → Edge
+- github.com → Firefox
+- youtube.com → Brave
 
-For example, it can open google.com in Chrome, msn.com in Edge, github.com in Firefox and youtube.com in Brave.
+Switching between multiple browsers for different purposes is cumbersome and requires a lot of manual work and time. A few scenarios where you are forced to work with multiple browsers:
+- Separate personal and work accounts
+- Use apps or sites that work only with specific browsers
+- If you’re a developer, you may want to test your sites and pages with multiple browsers
+- You want to isolate sessions for privacy
 
-You can also fine tune rules to make same domain open in different browsers. For example, mail.google.com can open in Brave while google.com still opens in Chrome.
-
-To know more, visit https://relink.shameel.net
+Head towards https://relink.shameel.net/ to learn more about Re:Link
